@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>My Blog</title>
+<link th:replace="article/fragments/headLinks">
+</head>
+<body>
+  <div th:replace="article/fragments/navbar"></div>
+  <div class="container-fluid">
+    <h1>Welcome to my fabulous blog!</h1>
+    <h3>Check out the articles on my blog</h3>
+    <div class="list-group">
+      <div th:each="article:${articles}">
+        <a th:href="@{/articles/} + ${article.id}" 
+        class="list-group-item list-group-item-action">
+          <span th:text="${article.title}"></span> By: 
+          <span th:text="${article.author}"></span>
+        </a>
+      </div>
+    </div>
+    <a th:href="@{/articles/new}">
+      <button class="btn btn-sm btn-primary">New Article</button>
+    </a>
+  </div>
+  <Script th:replace="article/fragments/scriptLinks"></Script>
+</body>
+</html>
+
