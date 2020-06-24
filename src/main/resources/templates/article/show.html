@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Blog Article</title>
+<link th:replace="article/fragments/headLinks">
+</head>
+<body>
+  <div th:replace="article/fragments/navbar"></div>
+  <div class="container-fluid">
+    <h4>Thank you for your article</h4>
+    <h4>Article:</h4>
+    <p th:text="${title}"></p>
+    <p th:text="${author}"></p>
+    <p th:text="${entry}"></p>
+    <p th:text="${createdAt}"></p>
+    <a th:href="@{/articles}"><button class="btn btn-sm btn-primary">Home</button></a>
+    <a th:href="@{/articles/new}"><button class="btn btn-sm btn-primary">New Article</button></a>
+  </div>
+  <script th:replace="article/fragments/scriptLinks"></script>
+</body>
+</html>
