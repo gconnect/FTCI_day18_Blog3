@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Blog Article</title>
+<link th:replace="article/fragments/headLinks">
+</head>
+<body>
+  <div th:replace="article/fragments/navbar"></div>
+  <div class="container-fluid">
+   <p>Please use the form below to enter a new article:</p>
+    <form action="#" th:action="@{/articles}" th:object="${article}" method="post">
+      <table>
+        <tr>
+          <td>Title:</td>
+          <td><input type="text" th:field="*{title}" /></td>
+        </tr>
+        <tr>
+          <td>Author:</td>
+          <td><input type="text" th:field="*{author}" /></td>
+        </tr>
+        <tr>
+          <td>Article:</td>
+          <td><input type="text" th:field="*{entry}" /></td>
+        </tr>
+        <tr>
+          <td>Title:</td>
+          <td><button class="btn btn-sm btn-success" type="submit">Say it</button></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+  <Script th:replace="article/fragments/scriptLinks"></Script>
+</body>
+</html>
+  
