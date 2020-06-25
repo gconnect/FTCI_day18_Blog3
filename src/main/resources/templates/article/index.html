@@ -12,18 +12,15 @@
     <h3>Check out the articles on my blog</h3>
     <div class="list-group">
       <div th:each="article:${articles}">
-        <a th:href="@{/articles/} + ${article.id}" 
+        <a th:href="@{/articles/} + ${article.articleId}" 
         class="list-group-item list-group-item-action">
           <span th:text="${article.title}"></span> By: 
           <span th:text="${article.author}"></span>
         </a>
       </div>
     </div>
-    <a th:href="@{/articles/new}">
-      <button class="btn btn-sm btn-primary">New Article</button>
-    </a>
   </div>
-  <Script th:replace="article/fragments/scriptLinks"></Script>
+  <script th:replace="article/fragments/scriptLinks"></script>
 </body>
 </html>
 
